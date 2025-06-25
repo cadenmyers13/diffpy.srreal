@@ -39,6 +39,7 @@ jobs:
           conda create -n test python=${{ matrix.python-version }} -y
           source $(conda info --base)/etc/profile.d/conda.sh
           conda activate test
+          conda install pip -y
           conda config --set always_yes yes --set changeps1 no
           conda install --file requirements/conda.txt -y
           conda install --file requirements/test.txt -y
